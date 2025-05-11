@@ -16,7 +16,7 @@ Start Apisix with the apisix.yaml config file
 
 `docker compose up -d`
 
->the `extra_hosts` group in the docker-compose.yaml file may need to be commented out depending on the docker installation.
+>the [`extra_hosts`](https://github.com/Tereius/apisix_bug_minimal_example/blob/eb1b38236d859a2b3f99d5079f52095182ef1677/docker-compose.yaml#L15) group in the docker-compose.yaml file may need to be commented out depending on the docker installation.
 
 Open the browser [http://127.0.0.1:9080](http://127.0.0.1:9080) and click the button "Do grpc request"
 
