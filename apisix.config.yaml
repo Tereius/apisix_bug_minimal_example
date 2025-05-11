@@ -1,0 +1,27 @@
+apisix:
+  enable_ipv6: false
+  enable_server_tokens: ${{DEVELOPMENT:=false}}
+  ssl:
+    enable: false
+
+  node_listen:
+    - ip: "0.0.0.0"
+      port: ${{APISIX_PROXY_PORT:=9080}}
+
+  enable_admin: ${{DEVELOPMENT:=false}}
+  admin_listen:
+    ip: "0.0.0.0"
+    port: ${{APISIX_ADMIN_PORT:=9180}}
+
+  enable_control: ${{DEVELOPMENT:=false}}
+  control:
+    ip: "0.0.0.0"
+    port: ${{APISIX_CONFIG_PORT:=9090}}
+
+nginx_config:
+  worker_processes: 1
+
+deployment:
+  role: data_plane
+  role_data_plane:
+    config_provider: yaml

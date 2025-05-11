@@ -1,0 +1,20 @@
+routes:
+  - uri: /api/*
+    plugins:
+      proxy-rewrite:
+        regex_uri: ["^/api/(.*)", "/$1"]
+      grpc-web:
+    upstream:
+      timeout:
+        connect: 10
+        send: 10
+        read: 120
+      nodes:
+        "host.docker.internal:8081": 1
+      scheme: grpc
+
+  - uri: /*
+    upstream:
+      nodes: 
+        "host.docker.internal:8080": 1
+#END

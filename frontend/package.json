@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack ./script.js && http-server ./ -d=false -o -c-1 --port 8080 -a 0.0.0.0"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.4",
+    "grpc-web": "^1.5.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "webpack": "~5.82.1",
+    "webpack-cli": "~5.1.1"
+  }
+}

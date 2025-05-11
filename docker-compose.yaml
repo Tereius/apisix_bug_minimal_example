@@ -1,0 +1,17 @@
+services:
+  apisix-rmr:
+    image: apache/apisix:3.12.0-debian
+    network_mode: bridge
+    volumes:
+      - ./apisix.yaml:/usr/local/apisix/conf/apisix.yaml:ro
+      - ./apisix.config.yaml:/usr/local/apisix/conf/config.yaml:ro
+    ports:
+      - "9080:9080/tcp" # proxy
+      - "9180:9180/tcp" # admin api
+      - "9090:9090/tcp" # control api
+    environment:
+      - APISIX_STAND_ALONE=true
+      - DEVELOPMENT=true
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
