@@ -10,7 +10,7 @@ Start the server
 
 Start the frontend
 
-`cd frontend && npm start`
+`cd frontend && npm i && npm start`
 
 Start Apisix with the apisix.yaml config file
 
